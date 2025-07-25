@@ -33,24 +33,97 @@
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: true"
     >
-      <a-assets></a-assets>
+      <a-assets>
+        <!-- Load all 21 GLB models -->
+        <a-asset-item id="model1" src="model1.glb"></a-asset-item>
+        <a-asset-item id="model2" src="model2.glb"></a-asset-item>
+        <a-asset-item id="model3" src="model3.glb"></a-asset-item>
+        <a-asset-item id="model4" src="model4.glb"></a-asset-item>
+        <a-asset-item id="model5" src="model5.glb"></a-asset-item>
+        <a-asset-item id="model6" src="model6.glb"></a-asset-item>
+        <a-asset-item id="model7" src="model7.glb"></a-asset-item>
+        <a-asset-item id="model8" src="model8.glb"></a-asset-item>
+        <a-asset-item id="model9" src="model9.glb"></a-asset-item>
+        <a-asset-item id="model10" src="model10.glb"></a-asset-item>
+        <a-asset-item id="model11" src="model11.glb"></a-asset-item>
+        <a-asset-item id="model12" src="model12.glb"></a-asset-item>
+        <a-asset-item id="model13" src="model13.glb"></a-asset-item>
+        <a-asset-item id="model14" src="model14.glb"></a-asset-item>
+        <a-asset-item id="model15" src="model15.glb"></a-asset-item>
+        <a-asset-item id="model16" src="model16.glb"></a-asset-item>
+        <a-asset-item id="model17" src="model17.glb"></a-asset-item>
+        <a-asset-item id="model18" src="model18.glb"></a-asset-item>
+        <a-asset-item id="model19" src="model19.glb"></a-asset-item>
+        <a-asset-item id="model20" src="model20.glb"></a-asset-item>
+        <a-asset-item id="model21" src="model21.glb"></a-asset-item>
+      </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-      <!-- Load 3 models manually for the first 3 targets -->
-
+      <!-- Link each model to its corresponding target -->
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model src="model1.glb" position="0 0 0" scale="0.3 0.3 0.3"></a-gltf-model>
+        <a-gltf-model src="#model1" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
       </a-entity>
-
       <a-entity mindar-image-target="targetIndex: 1">
-        <a-gltf-model src="model2.glb" position="0 0 0" scale="0.3 0.3 0.3"></a-gltf-model>
+        <a-gltf-model src="#model2" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
       </a-entity>
-
       <a-entity mindar-image-target="targetIndex: 2">
-        <a-gltf-model src="model3.glb" position="0 0 0" scale="0.3 0.3 0.3"></a-gltf-model>
+        <a-gltf-model src="#model3" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
       </a-entity>
-
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model src="#model4" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 4">
+        <a-gltf-model src="#model5" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 5">
+        <a-gltf-model src="#model6" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 6">
+        <a-gltf-model src="#model7" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 7">
+        <a-gltf-model src="#model8" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 8">
+        <a-gltf-model src="#model9" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 9">
+        <a-gltf-model src="#model10" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 10">
+        <a-gltf-model src="#model11" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 11">
+        <a-gltf-model src="#model12" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 12">
+        <a-gltf-model src="#model13" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 13">
+        <a-gltf-model src="#model14" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 14">
+        <a-gltf-model src="#model15" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 15">
+        <a-gltf-model src="#model16" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 16">
+        <a-gltf-model src="#model17" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 17">
+        <a-gltf-model src="#model18" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 18">
+        <a-gltf-model src="#model19" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 19">
+        <a-gltf-model src="#model20" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
+      <a-entity mindar-image-target="targetIndex: 20">
+        <a-gltf-model src="#model21" scale="0.25 0.25 0.25" position="0 -0.25 0" rotation="0 180 0"></a-gltf-model>
+      </a-entity>
     </a-scene>
   </body>
 </html>
