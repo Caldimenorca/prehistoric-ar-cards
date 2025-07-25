@@ -33,47 +33,24 @@
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: true"
     >
-      <a-assets>
-        <!-- We'll load models dynamically in JS -->
-      </a-assets>
+      <a-assets></a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
-      <!-- Empty container for placing the 3D model -->
-      <a-entity id="model-container" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+      <!-- DEBUG OVERLAYS: These show color squares when a card is recognized -->
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-plane position="0 0 0" height="1" width="1" color="lime" opacity="0.5"></a-plane>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-plane position="0 0 0" height="1" width="1" color="blue" opacity="0.5"></a-plane>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-plane position="0 0 0" height="1" width="1" color="red" opacity="0.5"></a-plane>
+      </a-entity>
+
     </a-scene>
-
-    <script>
-      AFRAME.registerComponent("marker-handler", {
-        init: function () {
-          const sceneEl = this.el.sceneEl;
-          const modelContainer = document.querySelector("#model-container");
-          let currentModel = null;
-
-          this.el.addEventListener("targetFound", (event) => {
-            const index = event.detail.index;
-            console.log("Target found:", index);
-
-            // Remove previous model
-            if (currentModel) {
-              modelContainer.removeChild(currentModel);
-              currentModel = null;
-            }
-
-            // Create new model entity
-            const newModel = document.createElement("a-entity");
-            newModel.setAttribute("gltf-model", `model${index}.glb`);
-            newModel.setAttribute("position", "0 0 0");
-            newModel.setAttribute("scale", "0.3 0.3 0.3");
-            newModel.setAttribute("rotation", "0 0 0");
-            modelContainer.appendChild(newModel);
-            currentModel = newModel;
-          });
-        },
-      });
-
-      // Attach marker handler to the scene
-      document.querySelector("a-scene").setAttribute("marker-handler", "");
-    </script>
   </body>
 </html>
