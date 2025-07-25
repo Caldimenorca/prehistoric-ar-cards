@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prehistoric AR Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.4/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      mindar-image="imageTargetSrc: targets.mind; autoStart: true;"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      embedded
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: true"
+    >
+      <a-assets>
+        <!-- We'll load models dynamically in JS -->
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- Empty container for placing the 3D model -->
+      <a-entity id="model-container" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+    </a-scene>
+
+    <script>
+      AFRAME.registerComponent("marker-handler", {
+        init: function () {
+          const sceneEl = this.el.sceneEl;
+          const modelContainer = document.querySelector("#model-container");
+          let currentModel = null;
+
+          this.el.addEventListener("targetFound", (event) => {
+            const index = event.detail.index;
+            console.log("Target found:", index);
+
+            // Remove previous model
+            if (currentModel) {
+              modelContainer.removeChild(currentModel);
+              currentModel = null;
+            }
+
+            // Create new model entity
+            const newModel = document.createElement("a-entity");
+            newModel.setAttribute("gltf-model", `model${index}.glb`);
+            newModel.setAttribute("position", "0 0 0");
+            newModel.setAttribute("scale", "0.3 0.3 0.3");
+            newModel.setAttribute("rotation", "0 0 0");
+            modelContainer.appendChild(newModel);
+            currentModel = newModel;
+          });
+        },
+      });
+
+      // Attach marker handler to the scene
+      document.querySelector("a-scene").setAttribute("marker-handler", "");
+    </script>
+  </body>
+</html>
